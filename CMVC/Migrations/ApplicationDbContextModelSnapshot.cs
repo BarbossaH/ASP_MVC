@@ -21,7 +21,7 @@ namespace CMVC.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("CMVC.Models.Category", b =>
+            modelBuilder.Entity("CMVC.Models.ItemCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace CMVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("ItemCategories");
                 });
 
             modelBuilder.Entity("CMVC.Models.Student", b =>

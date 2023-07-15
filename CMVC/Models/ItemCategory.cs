@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace CMVC.Models
 {
-	public class Category
+	public class ItemCategory
 	{
 		[Key]
 		public int Id { get; set; }

@@ -15,7 +15,7 @@ namespace CMVC.Context
 		 * and map it to the structure defined in the "Student" model class
 		 */
 		public DbSet<Student> Students { get; set; }
-		public DbSet<Category> Categories { get; set; }
+		public DbSet<ItemCategory> ItemCategories { get; set; }
     }
 }
 
