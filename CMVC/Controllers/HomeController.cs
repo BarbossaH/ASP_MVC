@@ -15,6 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        //return View("Privacy"); //it will access the privacy.cshtml, not index.cshtml
         return View();
     }
 
