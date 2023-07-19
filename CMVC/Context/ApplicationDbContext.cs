@@ -18,6 +18,19 @@ namespace CMVC.Context
         public DbSet<ItemCategory> ItemCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+			//base.OnModelCreating(modelBuilder);
+			modelBuilder.Entity<Category>().HasData(
+
+				new Category { Id = 1, Name = "Julian", DisplayOrder = 1 },
+				new Category { Id = 2, Name = "Xia", DisplayOrder = 2 },
+				new Category { Id = 3, Name = "Kevin", DisplayOrder = 3 },
+				new Category { Id = 4, Name = "Xi", DisplayOrder = 4 }
+
+                );
+        }
+
     }
 }
 

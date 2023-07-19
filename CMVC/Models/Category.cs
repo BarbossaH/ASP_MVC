@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CMVC.Models
@@ -9,8 +10,13 @@ namespace CMVC.Models
 		public int Id { get; set; }
 
 		[Required]
+		[MaxLength(30)]
+		[DisplayName("Category Name")]
 		public string Name { get; set; }
-		public int DisplayOrder { get; set; }
+
+        [DisplayName("Display Order")]
+		[Range(1,100,ErrorMessage ="Order must be between 1-100")]
+        public int DisplayOrder { get; set; }
 	}
 }
 

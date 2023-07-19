@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4fKR5aj3wZ9Drr6ZpgBkiwYC6V4BOXNC7WKmF5ZAquw8WBZ9GGiLhG0NvDQ26Zw78gfQBhELjdCZhm9CyYSb7Q==",
+  "dgSpecHash": "SkyvLAkU4J1b+5YrcJxfzqIb7hg98M3ibn69LHP3xvIQamABZa4ABTJkhcdr6za3reR9ykrxx6b/DJh8wxGrHQ==",
   "success": true,
   "projectFilePath": "/Users/huangbo/Projects/CMVC/CMVC/CMVC.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,8 @@
     "/Users/huangbo/.nuget/packages/humanizer.core.zh-cn/2.14.1/humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "/Users/huangbo/.nuget/packages/humanizer.core.zh-hans/2.14.1/humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "/Users/huangbo/.nuget/packages/humanizer.core.zh-hant/2.14.1/humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "/Users/huangbo/.nuget/packages/microsoft.aspnetcore.mvc.razor.extensions/6.0.0/microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+    "/Users/huangbo/.nuget/packages/microsoft.aspnetcore.mvc.razor.runtimecompilation/7.0.9/microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.9.nupkg.sha512",
     "/Users/huangbo/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.11/microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "/Users/huangbo/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/Users/huangbo/.nuget/packages/microsoft.build/17.3.2/microsoft.build.17.3.2.nupkg.sha512",
