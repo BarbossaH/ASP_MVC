@@ -1,0 +1,49 @@
+﻿@page
+@model RazorSample.Pages.Categories.CreateModel
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Category</h2>
+            <hr />
+        </div>
+        @*this will show every error*@
+        @*<div asp-validation-summary="None"></div>*@
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+        <div class="mb-3 mt-3 p-1 row">
+            <label asp-for="SingleCategory.Name" class="p-0"></label>
+            <input asp-for="SingleCategory.Name" class="form-control" />
+            <span asp-validation-for="SingleCategory.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 p-1 mt-3 row">
+            <label asp-for="SingleCategory.DisplayOrder" class="p-0">Display Order</label>
+            <input asp-for="SingleCategory.DisplayOrder" class="form-control" />
+            <span asp-validation-for="SingleCategory.DisplayOrder" class="text-danger"></span>
+
+        </div>
+
+        <div class="row">
+            @*<div class="col-6 col-md-3">*@
+            <div class="col-6 ">
+                <button type="submit" class="btn btn-primary form-control">Create</button>
+
+            </div>
+            @*<div class="mb-3 p-1 mt-3 row">*@
+            <div class="col-6 ">
+                <a asp-page="/categories/index" class="btn btn-outline-secondary border form-control">Back to List</a>
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@* if the validation is set up in model file, the following code will check the validation in the client end *@
+@*but if the validation add model error in controller, it doesn't work*@
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
