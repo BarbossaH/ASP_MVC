@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CMVC.Context;
 using CMVC.Models;
+using CMVC.DataAccess.Context;
 
 namespace CMVC.Views
 {

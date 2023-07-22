@@ -1,11 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using CMVC.Context;
+﻿using System.Configuration;
+using CMVC.DataAccess.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 //SetUp and Register DB
 builder.Services.AddDbContext<ApplicationDbContext>(

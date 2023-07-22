@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CMVC.Context;
+using CMVC.DataAccess.Context;
 using CMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +15,7 @@ namespace CMVC.Controllers
 		private readonly ApplicationDbContext _db;
 		public CategoryController(ApplicationDbContext db)
 		{
-			_db = db;
+			_db = db ?? throw new ArgumentNullException(nameof(db));
 		}
 		// GET: /<controller>/
 		public IActionResult Index()

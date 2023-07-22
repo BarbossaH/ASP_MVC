@@ -4,10 +4,10 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace CMVC.Migrations
+namespace CMVC.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class addtata : Migration
+    public partial class comeback : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
