@@ -1,5 +1,7 @@
 ﻿using System.Configuration;
 using CMVC.DataAccess.Context;
+using CMVC.DataAccess.Repository;
+using CMVC.DataAccess.Repository.IRepository;
 using CMVC.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +14,7 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddSingleton<ISingletionGuidService,SingletionGuidService>();
 //builder.Services.AddScoped<IScopedGuidServices,ScopedGuidService>();
 //builder.Services.AddTransient<ITransientGuidService,TransientGuidService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 //SetUp and Register DB
 builder.Services.AddDbContext<ApplicationDbContext>(

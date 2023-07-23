@@ -10677,9 +10677,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/huangbo/Projects/CMVC/CMVC/CMVC.csproj",
-      "projectName": "CMVC",
-      "projectPath": "/Users/huangbo/Projects/CMVC/CMVC/CMVC.csproj",
+      "projectUniqueName": "/Users/huangbo/Projects/CMVC/CMVC/CMVCApp.csproj",
+      "projectName": "CMVCApp",
+      "projectPath": "/Users/huangbo/Projects/CMVC/CMVC/CMVCApp.csproj",
       "packagesPath": "/Users/huangbo/.nuget/packages/",
       "outputPath": "/Users/huangbo/Projects/CMVC/CMVC/obj/",
       "projectStyle": "PackageReference",

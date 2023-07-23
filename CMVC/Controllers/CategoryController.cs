@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CMVC.DataAccess.Context;
+using CMVC.DataAccess.Repository;
+using CMVC.DataAccess.Repository.IRepository;
 using CMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,16 +14,17 @@ namespace CMVC.Controllers
 {
 	public class CategoryController : Controller
 	{
-		private readonly ApplicationDbContext _db;
-		public CategoryController(ApplicationDbContext db)
+		private readonly ICategoryRepository _categoryRepository;
+		public CategoryController(ICategoryRepository categoryRepository)
 		{
-			_db = db ?? throw new ArgumentNullException(nameof(db));
+            _categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));
 		}
 		// GET: /<controller>/
 		public IActionResult Index()
 		{
 			//in postgrsql, there is model named Categories, it can be seen in applicationdbcontext file
-			List<Category> categories = _db.Categories.ToList();
+			//List<Category> categories = _db.Categories.ToList();
+			List<Category> categories = _categoryRepository.GetAll().ToList();
 			return View(categories);
 		}
 
@@ -48,9 +51,9 @@ namespace CMVC.Controllers
 
 			if (ModelState.IsValid)
 			{
-				_db.Categories.Add(obj);
-				_db.SaveChanges();
-				TempData["success"] = "Category created successfully";
+                _categoryRepository.Add(obj);
+				_categoryRepository.Save();
+                TempData["success"] = "Category created successfully";
 			//return RedirectToAction("Index","ControllerName");
             return RedirectToAction("Index");
 			}
@@ -68,8 +71,10 @@ namespace CMVC.Controllers
 			}
 
 			//Category? category1 = _db.Categories.Find(id);
-			Category ?category = _db.Categories.FirstOrDefault(u => u.Id == id);
+			//Category ?category = _db.Categories.FirstOrDefault(u => u.Id == id);
 			//Category ?category2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
+
+			Category? category = _categoryRepository.Get(u => u.Id == id);
 
 			if (category == null)
 			{
@@ -97,9 +102,9 @@ namespace CMVC.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
-                TempData["success"] = "Category updated successfully";
+                _categoryRepository.Update(obj);
+				_categoryRepository.Save();
+                  TempData["success"] = "Category updated successfully";
 
                 //return RedirectToAction("Index","ControllerName");
                 return RedirectToAction("Index");
@@ -117,7 +122,7 @@ namespace CMVC.Controllers
                 return NotFound();
             }
 
-            Category? category = _db.Categories.FirstOrDefault(u => u.Id == id);
+            Category? category = _categoryRepository.Get(u => u.Id == id);
 
             if (category == null)
             {
@@ -130,14 +135,14 @@ namespace CMVC.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category ?obj = _db.Categories.Find(id);
+            Category ?obj = _categoryRepository.Get(u => u.Id == id);
 
-			if (obj == null)
+            if (obj == null)
 			{
 				return NotFound();
 			}
-			_db.Categories.Remove(obj);
-			_db.SaveChanges();
+            _categoryRepository.Remove(obj);
+			_categoryRepository.Save();
             TempData["success"] = "Category deleted successfully";
 
             return RedirectToAction("Index");

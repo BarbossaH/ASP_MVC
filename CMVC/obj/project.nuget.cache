@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qTzPM6Y4oYuUH85vFmVSOl048cRJTeiblHf6Q2c1KjHDxqImk2H16d5rEKfHCdvbzz6Wp04zKBTtkND86jzVkQ==",
+  "dgSpecHash": "GTA/npTx4Q7am82ZK8LzqCIp79Cto9xFFfLkFKuyCxSohD1vV3ru4h3qXB6YIcc+CSdMZO2SE8ikdA16SF5gAg==",
   "success": true,
-  "projectFilePath": "/Users/huangbo/Projects/CMVC/CMVC/CMVC.csproj",
+  "projectFilePath": "/Users/huangbo/Projects/CMVC/CMVC/CMVCApp.csproj",
   "expectedPackageFiles": [
     "/Users/huangbo/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/huangbo/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
