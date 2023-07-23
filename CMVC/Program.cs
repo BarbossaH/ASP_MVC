@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using CMVC.DataAccess.Context;
+using CMVC.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,12 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//builder.Services.AddSingleton<ISingletionGuidService,SingletionGuidService>();
+//builder.Services.AddScoped<IScopedGuidServices,ScopedGuidService>();
+//builder.Services.AddTransient<ITransientGuidService,TransientGuidService>();
 
 //SetUp and Register DB
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnect")));
 
-
+//builder.Services.AddSingleton();
 //builder.Services.AddRazorPages()
 //    .AddRazorRuntimeCompilation();
 var mvcBuilder = builder.Services.AddRazorPages();
